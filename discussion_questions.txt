@@ -1,5 +1,3 @@
-4:43 - 6:04
-
 ### DISCUSSION QUESTIONS ###
 
 # RUNTIME
@@ -87,3 +85,6 @@ A DFS uses a stack (LIFO), so the nodes would be visited in this order:
 3. How is a binary search tree different from other trees?
 
 In a binary search tree, each node has a left child and a right child, ordered such that left child < node < right child. This makes them fast to search, because each time we evaluate a node during our search, we're eliminating half of the nodes.
+
+# 4:43 - 6:04
+
