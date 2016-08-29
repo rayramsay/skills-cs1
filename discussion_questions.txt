@@ -1,0 +1,89 @@
+4:43 - 6:04
+
+### DISCUSSION QUESTIONS ###
+
+# RUNTIME
+
+1. When calculating the Big O notation for a particular algorithm, it's necessary to consider the length of time it takes for the algorithm to run as the algorithm's workload approaches infinity. You can think of the workload as the number of tasks required to complete a job. What determines the workload of figuring out whether your box of animal crackers contains an elephant?
+
+As the number of animal crackers in my box approaches infinity, the workload for figuring out whether that box contains an elephant depends on what type of box it is and how I am searching it. For example, if the box is an array and I have to pick up every cracker in sequence until I find an elephant (and I might never find an elephant!), the workload increases linearly as the number of crackers increases (i.e., it is O(n)).
+
+2. Order the following runtimes in ascending order by efficiency as n approaches infinity:
+
+I'm having trouble parsing "ascending order by efficiency," so this is from fewest additional operations as n increases to most additional operations.
+
+(good end)
+    O(1)
+    O(log n)
+    O(n)
+    O(n log n)
+    O(n^2)
+    O(2^n)
+(bad end)
+
+# STACKS AND QUEUES
+
+1. In the following cases, would a stack or queue be a more appropriate data structure?
+    1. The process of loading and unloading pallets onto a flatbed truck.
+    2. Putting bottle caps on bottles of beer as they roll down an assembly line
+    3. Calculating the solution to this mathematical expression: 2 + (7 * 4) - (3 / 2)
+
+1.1. A stack is more appropriate for loading/unloading pallets b/c the last pallet you put in is the first you will take out (LIFO).
+1.2. A queue is more appropriate for putting bottle caps on b/c the first bottle onto the assembly line is also the first bottle to get capped (FIFO).
+1.3. A stack is more appropriate because I will need access to the most recent element as I evaluate the expression (LIFO).
+
+2. Describe two more situations where a queue would be an appropriate data structure.
+
+A taxi rank is first-come, first-served: the first taxi to arrive at the rank serves the first customer to arrive, and then each taxi moves up one spot. Another example is our bio-break queue.
+
+3. Describe two more situations where a stack would be an appropriate data structure.
+
+Making and taking pancakes is a great example: every time the chef finishes a pancake, she puts it on the top of the stack, and then each diner takes a pancake off the top of the stack. A depth-first search also uses a stack.
+
+# LINKED LISTS
+
+1. Given the linked list below, which are the nodes? What is the data for each node? Where is the head? Where is the tail? (Please be as specific as possible — exactly which parts of the diagram correspond to each part? Arrows? Boxes? Text?)
+
+This linked list has three nodes. Each node is composed of two parts, its data (e.g., the box that says "Apple") and its reference (the box that says next and its arrow). The head of the linked list is an attribute ("head") that references (the arrow) the first node ("Apple"). The "Cherry" node references None, but the linked list does not reference it as the tail.
+
+2. What’s the difference between doubly- and singly-linked lists?
+While a node in a singly-linked list only has a next attribute, a node in a doubly-linked list also has a prev attribute that references the previous node.
+
+3. Why is it faster to append to a linked list if we keep track of the tail as an attribute?
+If we don't keep track of which node is the tail, we have to walk the list until we find the node that references None in order to append a new node.
+
+# TREES
+
+1. Given the tree above, in what order would a Breadth First Search (BFS) algorithm visit each node until finding burrito (starting at food)? Just list the order of nodes visited; no need to recreate the state of the algorithm data in your answer.
+
+A BFS uses a queue (FIFO), so the nodes would be visited in this order:
+1. Food
+2. Italian
+3. Indian
+4. Mexican
+5. Lasagna
+6. Pizza
+7. Tikka Masala
+8. Saag
+9. Burrito
+
+2. Given the tree above, in what order would a Depth First Search (DFS) algorithm visit each node until finding Chicago-style (starting at food)? Just list the order of nodes visited; no need to recreate the state of the algorithm data in your answer.
+
+A DFS uses a stack (LIFO), so the nodes would be visited in this order:
+1. Food
+2. Mexican
+3. Enchiladas
+4. Tacos
+5. Burrito
+6. Indian
+7. Saag
+8. Tikka Masala
+9. Italian
+10. Pizza
+11. Sicilian
+12. New York-style
+13. Chicago-style
+
+3. How is a binary search tree different from other trees?
+
+In a binary search tree, each node has a left child and a right child, ordered such that left child < node < right child. This makes them fast to search, because each time we evaluate a node during our search, we're eliminating half of the nodes.
